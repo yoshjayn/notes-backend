@@ -30,12 +30,9 @@ A RESTful API for a full-featured notes application with JWT authentication, lab
 
 3. Create a `.env` file based on `.env.example`:
    ```env
-   MONGO_URI=mongodb://localhost:27017/notes-app
-   JWT_SECRET=your_secret_key_here
-   JWT_EXPIRE=30d
-   PORT=5000
-   CLIENT_URL=http://localhost:3000
-   NODE_ENV=development
+   MONGODB_URI=mongodb+srv://yoshjayn:KkmwEYCVaUhAPqEE@cluster0.rpyipnv.mongodb.net/notesApp
+  JWT_SECRET=your_jwt_secret_key
+  PORT=5000
    ```
 
 4. Start the server:

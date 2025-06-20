@@ -10,7 +10,7 @@ exports.register = async (req, res, next) => {
     const { name, email, password } = req.body;
 
     // Check if user exists
-    const userExists = await User.findOne({ email });
+    const userExists = await User.findOne({ email }); 
     if (userExists) {
       return res.status(400).json({
         success: false,
@@ -89,7 +89,7 @@ exports.getMe = async (req, res, next) => {
 };
 
 // @desc    Update user details
-// @route   PUT /api/auth/updatedetails
+// @route   PUT /api/auth/updatedetails                                     //Why are routes and access mentioned here, are they readable and usable to this controller file.
 // @access  Private
 exports.updateDetails = async (req, res, next) => {
   try {
@@ -98,7 +98,7 @@ exports.updateDetails = async (req, res, next) => {
       email: req.body.email
     };
 
-    const user = await User.findByIdAndUpdate(req.user.id, fieldsToUpdate, {
+    const user = await User.findByIdAndUpdate(req.user.id, fieldsToUpdate, {        //When 'User' and when 'user'
       new: true,
       runValidators: true
     });
