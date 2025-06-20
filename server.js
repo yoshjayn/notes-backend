@@ -37,6 +37,12 @@ const connectDB = async () => {
 };
 
 // Routes
+
+app.get("/",(req,res)=>{
+  res.status(200).json({
+    message:"Hello World"
+  })
+})
 app.use('/api/auth', authRoutes);
 app.use('/api/notes', noteRoutes);
 app.use('/api/labels', labelRoutes);
